@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>益衡</title>
+<link rel="stylesheet" type="text/css" href="css/base.css" />
+<link rel="stylesheet" type="text/css" href="css/index.css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.SuperSlide.js"></script>
+<script type="text/javascript" src="js/resize.js"></script>
+</head>
+<body onresize="resize()" onload="resize()">
+<!-- 顶部+搜索-->
+<div class="header">
+  <div class="search_container">
+    <input type="text"/>
+  </div>
+</div>
+<!-- 导航-->
+<div class="nav_container">
+  <!-- Logo-->
+  <div id="logo"></div>
+  <div class="nav" >
+    <ul id="menu">
+      <li><a class="active nav_index" href="index.html">首页</a></li>
+      <li><a href="aboutus.html">关于益衡</a>
+        <div class="menu_3">
+          <div class="menu_3_title"> <p><a href="aboutus.html">益衡简介</a></p>
+             <p><a class="top_6"  href="manage_team.html">管理团队</a></p>
+             <p><a  class="top_6" href="relation_org.html">关联机构</a></p>
+          </div>
+        </div>
+      </li>
+      <li><a href="investment.html">公司业务</a>
+        <div id="menu_1">
+          <div class="menu_3_title">  <p><a href="investment.html">股权投资</a></p>
+        
+          </div>
+        </div>
+      </li>
+      <li><a href="industry_funds.html">益衡动态</a>
+        <div class="menu_2">
+          <div class="menu_3_title"><p><a href="industry_funds.html">产业基金</a></p>
+           <p> <a class="top_6"  href="project.html">在投项目</a></p>
+          </div>
+        </div>
+      </li>
+      <li><a  class="nav_college"  href="business_college.html">益衡商学院</a></li>
+      <li><a href="contactus.html">联系我们</a></li>
+      <li><a href="jobs.html">招贤纳士</a></li>
+    </ul>
+  </div>
+</div>
+<!-- 左侧-->
+  <div id="banner_l"> <img src="img/banner_L.png" /> </div>
+<!--Banner-->
+<div class="index_banner">
+  
+  <!-- 轮播主图-->
+  <div class="banner">
+    <div  class="banner_target">
+      <div  class="banner_target_l"> <img src="img/target_L.png" /> </div>
+      <div class="index_focus">
+        <div class="bd">
+          <ul>
+            <li> <a href="" class="pic"> <img class="pic" src="img/banner.png" width="1122px" height="500px"> </a> </li>
+            <li> <a href="" class="pic"> <img class="pic" src="img/banner.png" width="1122px" height="500px" > </a> </li>
+            <li> <a href="" class="pic"> <img class="pic" src="img/banner.png" width="1122px" height="500px" > </a> </li>
+            <li> <a href="" class="pic"> <img class="pic" src="img/banner.png" width="1122px" height="500px"> </a> </li>
+          </ul>
+        </div>
+		 <div class="slide_nav"> <a href="javascript:;">●</a> <a href="javascript:;">●</a> <a href="javascript:;">●</a> <a href="javascript:;">●</a> </div>
+      </div>
+     
+      <div class="banner_target_r"> <img src="img/target_R.png" /> </div>
+    </div>
+  </div>
+ 
+</div>
+ <!-- 右侧-->
+  <div id="banner_r"> <img src="img/banner_R.png" /> </div>
+<!-- 底部气泡-->
+<div class="bottom_content">
+  <div class="bottom_content_center">
+    <div class="content_frame"> <span class="title_bold">关于益衡</span> <br>
+      <span><a href="aboutus.html">益衡简介</a></span> <br>
+      <span><a href="manage_team.html">管理团队</a></span> <br>
+      <span><a href="relation_org.html">关联机构</a></span> <br>
+    </div>
+    <div class="content_frame"> <span class="title_bold">公司业务</span> <br>
+      <span><a href="investment.html">股权投资</a></span> <br>
+     
+    </div>
+    <div class="content_frame"> <span  class="title_bold">益衡动态</span> <br>
+      <span><a href="industry_funds.html">产业基金</a></span> <br>
+      <span><a href="project.html">在投项目</a></span> <br>
+    </div>
+  </div>
+</div>
+<!-- 页脚-->
+<div class="footer">COPYRIGHT &copy;2015 YIHENG CO.LTD., ALL RIGHT RESERVED.</div>
+<script type="text/javascript">
+$(document).ready(function(){
+
+	$(".index_focus").hover(function(){
+		$(this).find(".index_focus_pre,.index_focus_next").stop(true, true).fadeTo("show", 1)
+	},function(){
+		$(this).find(".index_focus_pre,.index_focus_next").fadeOut()
+	});
+	
+	$(".index_focus").slide({
+		titCell: ".slide_nav a ",
+		mainCell: ".bd ul",
+		delayTime: 200,
+		interTime: 1500,
+		prevCell:".index_focus_pre",
+		nextCell:".index_focus_next",
+		effect: "fold",
+		autoPlay: true,
+		trigger: "click",
+		startFun:function(i){
+			$(".index_focus_info").eq(i).find("h3").css("display","block").fadeTo(1000,1);
+			$(".index_focus_info").eq(i).find(".text").css("display","block").fadeTo(1000,1);
+		}
+	});
+	
+});
+</script>
+</body>
+</html>
